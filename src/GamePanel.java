@@ -1,5 +1,4 @@
 
-
 import javax.swing.Timer;
 import java.awt.Color;
 import java.awt.Font;
@@ -30,7 +29,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	}
 
 	GamePanel() { /*--------------------CONSTRUCTOR--------------------*\                                         																																																																				*/
-		timer = new Timer(1000 / 60, this);
+		timer = new Timer(1000 / 100, this);
 		titleFont = new Font("Arial", Font.PLAIN, 36);
 	}
 
@@ -43,67 +42,8 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		drawGameState(g);
 	}
 
-	@Override
-	public void keyTyped(KeyEvent e) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void keyPressed(KeyEvent e) {
-		// TODO Auto-generated method stub
-		if (e.getKeyCode() == KeyEvent.VK_UP) {
-			
-		}
-		if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-			
-		}
-		if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-			
-		}
-		if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-			
-		}
-	}
-
-	@Override
-	public void keyReleased(KeyEvent e) {
-		// TODO Auto-generated method stub
-		if (e.getKeyCode() == KeyEvent.VK_UP) {
-			
-		}
-		if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-			
-		}
-		if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-			
-		}
-		if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-			
-		}
-	}
-
-	public void updateMenuState() {
-
-	}
-
 	public void updateGameState() {
 		OM.update();
-	}
-
-	public void updateEndState() {
-
-	}
-
-	public void drawMenuState(Graphics g) {
-		g.setFont(titleFont);
-		g.setColor(Color.BLUE);
-		g.fillRect(0, 0, Lander.WIDTH, Lander.HEIGHT);
-		g.setColor(Color.YELLOW);
-		g.drawString("VEGETARIAN V. PIGS", 10, 100);
-		g.drawString("Control character with arrows", 0, 200);
-		g.drawString("Shoot with space", 0, 250);
-		OM.score = 0;
 	}
 
 	public void drawGameState(Graphics g) {
@@ -115,12 +55,26 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	}
 
 	public void drawEndState(Graphics g) {
-		g.setFont(titleFont);
-		g.setColor(Color.RED);
-		g.fillRect(0, 0, Lander.WIDTH, Lander.HEIGHT);
-		g.setColor(Color.BLACK);
-		g.drawString("GAME OVER", 125, 100);
-		g.drawString("You killed " + OM.getScore() + " Enemies", 50, 150);
-		g.drawString("Press ENTER to restart", 50, 500);
+	}
+	public ObjectManager getObjectManager () {
+		return OM;
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 }

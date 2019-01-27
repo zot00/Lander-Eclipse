@@ -17,7 +17,7 @@ public class Lander {
 	void setup() {
 		gamepanel=new GamePanel();
 		jframe.add(gamepanel);
-		jframe.addKeyListener(gamepanel);
+		jframe.addKeyListener(gamepanel.getObjectManager());
 		jframe.setSize(WIDTH, HEIGHT);
 		jframe.setVisible(true);
 		jframe.getContentPane().setPreferredSize(new Dimension(WIDTH, HEIGHT));
